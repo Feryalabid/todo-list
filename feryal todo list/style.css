@@ -1,0 +1,303 @@
+/**{
+    margin: 0;
+    padding: 0;
+}
+input:not([type="radio"]):not([type="checkbox"]),button{
+    appearance:none;
+    border:none;
+    outline:none;
+    background: none;
+    cursor: pointer;
+}
+body{
+    background-color: rgb(215, 215, 215);
+}
+.main{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+h3{
+    font-size: 1.5rem;
+    font-weight: 200;
+    margin-bottom: 1.5%;
+    color: black;
+}
+h4{
+    color: grey;
+    font-size:1rem;
+    margin-bottom: 1.5%;
+    font-weight: 600;
+}
+.greet h2{
+    display: flex;
+}
+.greet input{
+    margin-left: 1.3%;
+    flex: 1 1 0%;
+       min-width: 0;
+}
+.greet h2, .greet input{
+    color:black;
+    font-size:19px ;
+    font-weight: 600;
+}
+.eg{
+    display: block;
+    width: 35%;
+    font-size:15px ;
+    padding: 1rem 1.5rem;
+    color: black;
+    background-color: white;
+    border-radius :0.5em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 1) ;
+    margin-bottom: 3%;
+}
+.options{
+    display: grid;
+    grid-template-columns: repeat(2, 30%);
+    grid-gap: 1rem;
+    margin-bottom: 2%;
+}
+.options label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow:0 1px 3px rgba(0, 0, 0, 1) ;
+    cursor: pointer;
+}
+input[type="radio"],
+input[type="checkbox"] {
+    display:none ;
+}
+.bubble{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #3A82EE;
+    box-shadow: 0px 0px 4px rgb(58,120, 238,0.75);
+}
+.bubble.personal{
+    border-color: #EA40A4;
+    box-shadow: 0px 0px 4px rgb(234,64, 164,0.75);
+}
+.bubble::after{
+    content: "";
+    display: block;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    background-color:#3A82EE;
+    box-shadow: 0px 0px 4px rgb(58,120, 238,0.75);
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+}
+.bubble.personal::after{
+    background-color: #EA40A4;
+    box-shadow:0px 0px 4px rgb(234,64, 164,0.75) ;
+}
+input:checked ~.bubble::after{
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+}
+.todo.options label div{
+    color:black;
+    font-size: 1.125rem;
+    margin-top: 1rem;
+}
+.todo input[type="submit"] {
+    display: block;
+    width: 40%;
+    font-size: 1.125rem;
+    color:white;
+    background-color:#EA40A4 ;
+    border-radius: 0.5rem;
+    box-shadow:0px 0px 4px rgb(234,64, 164,0.75);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+.todo input[type="submit"]:hover{
+    opacity: 0.75;
+}
+.list{
+    margin: 1rem 0;
+}
+.todo-item{
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 1) ;
+    margin-bottom: 1rem;
+    width: 60%;
+}
+.todo-item label{
+    display: block;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+.todo-content{
+    flex: 1 1 0%;
+}
+.todo-content input{
+    color: #000;
+    font-size: 1.125rem;
+}
+.actions{
+    display: flex;
+    align-items: center;
+}
+ button{
+    display: block;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+ .actions button:hover{
+    opacity: 0.75;
+} 
+.actions .edit{
+    margin-right :0.5rem;
+    background-color:#EA40A4; 
+}
+.actions .del{
+    margin-right :0.5rem;
+    background-color:#ff5b57; 
+}
+.todo-item.done .todo-content input{
+    text-decoration: line-through;
+    color: grey;
+}*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #b5b4b4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(todo3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.todo-container {
+    background-color: #022a43;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    width: 50%;
+    max-width: 100%;
+
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 20px;
+    font-family: "Lavishly Yours", cursive;
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+#todo-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#todo-input {
+    width: 75%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #c20473;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px rgba(125, 122, 124, 0.75);
+    transition: 0.2s ease-in-out;
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: oblique;
+}
+
+button:hover {
+    opacity: 0.75;
+}
+
+button:hover {
+    background-color: #EA40A4;
+    color: #000;
+}
+
+ul {
+    list-style: none;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #8b8888;
+}
+
+.todo-item.done input {
+    text-decoration: line-through;
+}
+
+.todo-item button {
+    background-color: #771c19;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.todo-item button:hover {
+    background-color: #c9302c;
+}
+
+.todo-item .edit {
+    background-color: #1911ec;
+}
+
+.todo-item .edit:hover {
+    background-color: #3A82EE;
+}
+@media (max-width:1024px) {
+    .todo-container{
+        width: 90%;
+        height: 25vh;
+
+    }
+}
